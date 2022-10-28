@@ -1,7 +1,8 @@
+import BaseLayout from "container/base/BaseLayout";
 import "./reset.css";
 
 function App() {
-  return <div className="App"></div>;
+  return <BaseLayout />;
 }
 
 export default App;
