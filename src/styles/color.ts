@@ -8,6 +8,10 @@ export const COLOR = {
     secondary: "#8f9bb2",
   },
 
+  icon: {
+    disalbed: "#C5CEE0",
+  },
+
   grey100: "#EDF1F7",
   grey400: "#8F9BB2",
 };

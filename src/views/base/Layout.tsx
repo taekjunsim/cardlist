@@ -1,14 +1,21 @@
 /** @jsxImportSource @emotion/react */
-
-import React from "react";
+import { useCallback, useState, useEffect } from "react";
 import { css } from "@emotion/react";
 
-interface LayoutCompPropTypes {
-  height: number;
-  children: React.ReactNode;
-}
+import CardContainer from "containers/card";
 
-function LayoutComp({ height, children }: LayoutCompPropTypes) {
+function LayoutComp() {
+  const [height, setHeight] = useState(window.innerHeight);
+
+  const getViewport = useCallback(() => {
+    setHeight(window.innerHeight);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", getViewport);
+    return () => window.removeEventListener("resize", getViewport);
+  }, [getViewport]);
+
   return (
     <div
       css={css`
@@ -18,7 +25,7 @@ function LayoutComp({ height, children }: LayoutCompPropTypes) {
     >
       <div className="body-container" css={wrapper}>
         <div className="section" css={sectionStyle}>
-          {children}
+          <CardContainer />
         </div>
       </div>
     </div>
@@ -40,4 +47,5 @@ const wrapper = css`
 const sectionStyle = css`
   width: 343px;
   margin: 0 auto;
+  overflow: hidden;
 `;
