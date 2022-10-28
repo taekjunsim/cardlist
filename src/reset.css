@@ -25,13 +25,14 @@ body {
   width: 100%;
   height: 100%;
   line-height: 1;
-  color: #333;
+  color: #222b45;
   text-underline-offset: 4px;
   font-family: "Noto Sans KR Regular", -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
 
   -webkit-text-size-adjust: 100%; /*ios 가로/세로모드 변경시 폰트 크기 변경 안되게*/
 }
